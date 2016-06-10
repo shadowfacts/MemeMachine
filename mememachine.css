@@ -1,0 +1,124 @@
+/* Page */
+html {
+	height: 400vh;
+}
+
+section {
+	height: 100vh;
+}
+
+/* Global */
+.text-center {
+	text-align: center;
+}
+
+button {
+	font-family: Impact;
+	font-size: 48px;
+	background-color: #eee;
+	border-style: solid;
+	border-color: #ddd;
+	width: 25%;
+}
+
+button:hover {
+	background-color: #ddd;
+	cursor: pointer;
+}
+
+p {
+	font-family: sans-serif;
+	font-weight: 300;
+}
+
+.margin-bottom-50 {
+	margin-bottom: 50px;
+}
+
+input[type=text],
+input[type=url] {
+	width: 90%;
+	border-style: solid;
+	border-color: #ddd;
+	padding: 5px;
+	font-size: 12pt;
+}
+
+h1, h2 {
+	font-family: Impact;
+	text-align: center;
+}
+
+h1 {
+	font-size: 5rem;
+}
+
+h2 {
+	font-size: 4rem;
+}
+
+/* Start */
+
+/* Create */
+#create > .wrapper > input {
+	width: 50%;
+	margin-bottom: 50px;
+}
+
+#create > .options {
+	text-align: center;
+}
+
+#create > .options > li {
+	display: inline;
+	margin-left: 10px;
+	margin-right: 10px;
+	text-align: center;
+	vertical-align: middle;
+}
+
+#create > .options > li > label {
+	width: 300px;
+	height: 75px;
+	display: inline-block;
+	padding: 10px;
+	background-color: #eee;
+
+	vertical-align: middle;
+}
+
+#create > .options > li > input[type=radio]:checked + label {
+	background-color: #ddd;
+}
+
+#create > .options > li > input[type=radio] {
+	display: none;
+}
+
+#create > .options > li > label > input[type=file] {
+	font-size: 12pt;
+}
+
+#create > .options > li > input[type=radio]:checked + label > input[type=url] {
+	border-color: #ccc;
+}
+
+/* Text */
+#text input[type=text] {
+	width: 50%;
+	margin-bottom: 20px;
+}
+
+#text #meme {
+	display: block;
+	margin: auto;
+	margin-bottom: 50px;
+}
+
+
+
+
+
+
+
+

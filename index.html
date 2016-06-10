@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Meme Machine</title>
+
+	<link rel="stylesheet" href="mememachine.css">
+</head>
+<body>
+	
+	<section id="start">
+		
+		<h1>Meme Machine</h1>
+
+		<div class="text-center">
+			<p id="tag" class="margin-bottom-50">For making memes on the go.</p>
+
+			<button id="go">Go</button>
+		</div>
+
+	</section>
+
+	<section id="create">
+		
+		<h2>Select Image</h2>
+
+		<p class="text-center margin-bottom-50">
+			Click to select.
+		</p>
+
+		<ul class="options">
+			<li>
+				<input type="radio" name="source" id="srcUpload" checked>
+				<label for="srcUpload">
+					<input type="file" name="file" id="file">
+					<p>Upload an image.</p>
+				</label>
+			</li>
+			<li>
+				<input type="radio" name="source" id="srcURL">
+				<label for="srcURL">
+					<input type="url" name="url" id="url" placeholder="Image URL">
+					<p>Direct link to an image.</p>
+				</label>
+			</li>
+		</ul>
+
+		<div class="text-center">
+			<button id="next">Next</button>
+		</div>
+
+	</section>
+
+	<section id="text">
+		
+		<h2>Add Text</h2>
+
+		<div class="text-center">
+			<p class="margin-bottom-50">
+				here come dat text!
+				<br>
+				oh shit waddup!
+			</p>
+
+			<input type="text" name="top" id="top" placeholder="Top">
+			<input type="text" name="bottom" id="bottom" placeholder="Bottom">
+		</div>
+
+		<div class="text-center">
+			<canvas id="meme"></canvas>
+
+			<button id="finished">Finished</button>
+		</div>
+
+
+	</section>
+
+	<section id="finished">
+		
+		<h2>Finished</h2>
+
+		<div class="text-center">
+
+			<p>
+				Right-click to save.
+			</p>
+			
+			<img src="" alt="Meme" id="export">
+
+			<!-- share-y stuff -->
+
+		</div>
+
+	</section>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+	<script src="mememachine.js"></script>
+
+</body>
+</html>
