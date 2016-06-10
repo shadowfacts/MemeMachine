@@ -2,7 +2,7 @@ let tags = [
 	"For making memes on the go.",
 	"Don't let your memes be dreams!",
 	"JUST DO IT!",
-	"When you need to meme real quit but can't stand watermarks.",
+	"When you need to meme real quick but can't stand watermarks.",
 	"<a href='https://www.youtube.com/watch?v=BdAUvAXCUW8'>Meme Machine</a>",
 	"For when you have the urge to just meme."
 ];
