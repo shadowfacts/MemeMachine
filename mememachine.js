@@ -90,8 +90,7 @@ function draw() {
 		}
 
 		if (bottomText) {
-			let textHeight = getTextHeight(bottomText, canvas.width / 2, 72) - 144;
-			// Ignore the magic -144, my algorithm's broken and I'm too lazy to fix it
+			let textHeight = getTextHeight(bottomText, canvas.width, 72);
 			drawText(bottomText, canvas.width / 2, image.height - 24 - textHeight, canvas.width, 72);
 		}
 
@@ -108,7 +107,7 @@ function drawText(text, x, y, maxWidth, lineHeight) {
 	let words = text.split(" ");
 	var line = "";
 
-	for (i = 0; i < words.length; i++) {
+	for (var i = 0; i < words.length; i++) {
 		let testLine = line + words[i] + " ";
 		let metrics = context.measureText(testLine);
 		if (metrics.width > maxWidth && i > 0) {
@@ -130,7 +129,7 @@ function getTextHeight(text, maxWidth, lineHeight) {
 
 	var lineCount = 0;
 
-	for (i = 0; i < words.length; i++) {
+	for (var i = 0; i < words.length; i++) {
 		let testLine = line + words[i] + " ";
 		let metrics = context.measureText(testLine);
 		if (metrics.width > maxWidth && i > 0) {
@@ -142,59 +141,3 @@ function getTextHeight(text, maxWidth, lineHeight) {
 	}
 	return lineCount * lineHeight;
 }
-
-// $(document).ready(() => {
-// 	let canvas = document.getElementById("meme");
-
-// 	let context = canvas.getContext("2d");
-
-// 	window.requestAnimationFrame(() => {
-// 		draw(canvas, context);
-// 	});
-// });
-
-// let image = new Image();
-
-// function draw(canvas, context) {
-// 	image.src = $("#url").val();
-
-// 	canvas.width = image.width;
-// 	canvas.height = image.height;
-
-// 	context.drawImage(image, 0, 0, image.width, image.height);
-
-// 	context.font = "48px Impact";
-// 	context.fillStyle = "white";
-// 	context.strokeStyle = "black";
-// 	context.lineWidth = 3;
-// 	context.textAlign = "center";
-
-// 	let topText = getTopText();
-// 	let bottomText = getBottomText();
-
-// 	context.fillText(topText, canvas.width / 2, 48);
-// 	context.strokeText(topText, canvas.width / 2, 48);
-
-// 	context.fillText(bottomText, canvas.width / 2, image.height - 16);
-// 	context.strokeText(bottomText, canvas.width / 2, image.height - 16);
-
-// 	window.requestAnimationFrame(() => {
-// 		draw(canvas, context);
-// 	});
-// }
-
-// function getTopText() {
-// 	var text = $("#topText").val();
-// 	if ($("#uppercase").is(":checked")) {
-// 		text = text.toUpperCase();
-// 	}
-// 	return text;
-// }
-
-// function getBottomText() {
-// 	var text = $("#bottomText").val();
-// 	if ($("#uppercase").is(":checked")) {
-// 		text = text.toUpperCase();
-// 	}
-// 	return text;
-// }
