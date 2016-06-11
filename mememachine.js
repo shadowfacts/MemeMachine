@@ -1,4 +1,4 @@
-let tags = [
+var tags = [
 	"For making memes on the go.",
 	"Don't let your memes be dreams!",
 	"JUST DO IT!",
@@ -12,14 +12,14 @@ var context;
 
 var imageSrc;
 
-let image = new Image();
+var image = new Image();
 image.crossOrigin = "anonymous";
 var topText;
 var bottomText;
 
 var dataSource;
 
-$(document).ready(() => {
+$(document).ready(function() {
 
 	$('#tag').html(tags[Math.floor(Math.random() * tags.length)]);
 
@@ -27,24 +27,24 @@ $(document).ready(() => {
 	context = canvas.getContext("2d");
 
 	$("#top, #bottom, #url").on("input", update);
-	$("#file").change(() => {
-		let reader = new FileReader();
-		reader.addEventListener("load", () => {
+	$("#file").change(function() {
+		var reader = new FileReader();
+		reader.addEventListener("load", function() {
 			imageSrc = reader.result;
 		});
-		let file = document.getElementById("file").files[0];
+		var file = document.getElementById("file").files[0];
 		if (file) {
 			reader.readAsDataURL(file);
 		}
 	});
 
-	$("#go").click(() => {
+	$("#go").click(function() {
 		scrollTo($("#create"));
 	});
-	$("#next").click(() => {
+	$("#next").click(function() {
 		scrollTo($("#text"));
 	});
-	$("#finished").click(() => {
+	$("#finished").click(function() {
 		scrollTo($("#finished"));
 	});
 
@@ -90,7 +90,7 @@ function draw() {
 		}
 
 		if (bottomText) {
-			let textHeight = getTextHeight(bottomText, canvas.width, 72);
+			var textHeight = getTextHeight(bottomText, canvas.width, 72);
 			drawText(bottomText, canvas.width / 2, image.height - 24 - textHeight, canvas.width, 72);
 		}
 
@@ -98,18 +98,18 @@ function draw() {
 		$("#export").attr("src", dataSource);
 	}
 
-	window.requestAnimationFrame(() => {
+	window.requestAnimationFrame(function() {
 		draw(canvas, context);
 	});
 }
 
 function drawText(text, x, y, maxWidth, lineHeight) {
-	let words = text.split(" ");
+	var words = text.split(" ");
 	var line = "";
 
 	for (var i = 0; i < words.length; i++) {
-		let testLine = line + words[i] + " ";
-		let metrics = context.measureText(testLine);
+		var testLine = line + words[i] + " ";
+		var metrics = context.measureText(testLine);
 		if (metrics.width > maxWidth && i > 0) {
 			context.fillText(line, x, y);
 			context.strokeText(line, x, y);
@@ -124,14 +124,14 @@ function drawText(text, x, y, maxWidth, lineHeight) {
 }
 
 function getTextHeight(text, maxWidth, lineHeight) {
-	let words = text.split(" ");
+	var words = text.split(" ");
 	var line = "";
 
 	var lineCount = 0;
 
 	for (var i = 0; i < words.length; i++) {
-		let testLine = line + words[i] + " ";
-		let metrics = context.measureText(testLine);
+		var testLine = line + words[i] + " ";
+		var metrics = context.measureText(testLine);
 		if (metrics.width > maxWidth && i > 0) {
 			lineCount++;
 			line = words[i] + " ";
