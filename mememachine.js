@@ -79,7 +79,7 @@ function draw() {
 
 		context.drawImage(image, 0, 0, image.width, image.height);
 
-		context.font = "72px Impact";
+		context.font = "72px Impact, League Gothic";
 		context.fillStyle = "white";
 		context.strokeStyle = "black";
 		context.lineWidth = 2;
