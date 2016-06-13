@@ -116,9 +116,13 @@ h2 {
 }
 
 /* Text */
-#text input[type=text] {
+#text input {
 	width: 50%;
 	margin-bottom: 20px;
+}
+
+#text #sizeCounter {
+	font-weight: bold;
 }
 
 #text #meme {

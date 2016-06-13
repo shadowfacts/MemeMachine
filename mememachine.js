@@ -16,6 +16,7 @@ var image = new Image();
 image.crossOrigin = "anonymous";
 var topText;
 var bottomText;
+var fontSize = 64;
 
 var dataSource;
 
@@ -27,6 +28,10 @@ $(document).ready(function() {
 	context = canvas.getContext("2d");
 
 	$("#top, #bottom, #url").on("input", update);
+	$("#size").on("input", function() {
+		update();
+		$("#sizeCounter").html(fontSize);
+	})
 	$("#file").change(function() {
 		var reader = new FileReader();
 		reader.addEventListener("load", function() {
@@ -67,6 +72,7 @@ function update() {
 
 	topText = $("#top").val();
 	bottomText = $("#bottom").val();
+	fontSize = $("#size").val();
 }
 
 function draw() {
@@ -79,7 +85,7 @@ function draw() {
 
 		context.drawImage(image, 0, 0, image.width, image.height);
 
-		context.font = "72px Impact, League Gothic";
+		context.font = fontSize + "px Impact, League Gothic";
 		context.fillStyle = "white";
 		context.strokeStyle = "black";
 		context.lineWidth = 2.5;
