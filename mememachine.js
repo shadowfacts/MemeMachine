@@ -82,7 +82,7 @@ function draw() {
 		context.font = "72px Impact, League Gothic";
 		context.fillStyle = "white";
 		context.strokeStyle = "black";
-		context.lineWidth = 2;
+		context.lineWidth = 2.5;
 		context.textAlign = "center";
 
 		if (topText) {
